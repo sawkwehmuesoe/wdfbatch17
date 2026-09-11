@@ -1,0 +1,29 @@
+.div1,.div2,.div3,.div4,.div5,.div6{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.div1{
+    background: conic-gradient(yellow,red,blue,yellow);
+}
+
+.div2{
+    background: conic-gradient(rgb(255, 255, 132),rgb(217, 143, 6),brown,rgb(255, 213, 0),rgb(255, 255, 132));
+}
+
+.div5{
+    /* background: conic-gradient(
+        red 40%,
+        green 0% 50%,
+        blue 0% 80%,
+        yellow 0% 100%
+    ); */
+
+    background: conic-gradient(
+        red 33%,
+        green 0% 66%,
+        yellow 0%
+    );
+}

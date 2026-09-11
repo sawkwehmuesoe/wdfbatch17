@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>String Methods</title>
+    </head>
+    <body>
+
+        
+
+        <script type="text/javascript">
+        
+            let firstname = "Yamin";
+            let lastname = "May Oo";
+
+            console.log(firstname); // Yamin
+            console.log(lastname); // May Oo
+            console.log(firstname,lastname); // Yamin May Oo
+            console.log(firstname.length); // 5 
+
+            // => concat()
+
+            let fullname = firstname + " " + lastname;
+            console.log(fullname); // Yamin May Oo
+
+            // => concat(string)
+            console.log(firstname.concat(lastname));
+            console.log(lastname.concat(firstname));
+
+            // => Appen ( += )
+
+            let name1 = "Honey Nway";
+            let name2 = "Oo";
+
+            console.log(name1+name2); // Honey NwayOo 
+            console.log(name1.concat(name2)); // Honey NwayOo
+
+            name1 += name2;
+            console.log(name1); // Honey NwayOo
+
+            let num1 = 10;
+            let num2 = 20;
+
+            num1 += num2;
+
+            console.log(num1); // 30
+            console.log(num2); // 20 
+
+            // =>String is Character Array in JS 
+
+            let myfriend = "Aung Ko Ko";
+
+            console.log(myfriend); // Aung Ko Ko
+            console.log(typeof myfriend); // string
+            console.log(myfriend.length); // 10 
+
+            console.log(myfriend[0]); // A
+            console.log(myfriend[3]); // g
+            console.log(myfriend[4]); // 
+            console.log(myfriend[myfriend.length-1]);
+
+            // => charAt(index)
+
+            const nickname = "Aung Kyaw Kyaw";
+            console.log(nickname[5]); // K 
+            console.log(nickname.charAt(5)); // K
+            console.log(nickname.charAt(nickname.length-1)); // w
+
+            // => indexOf()
+
+            const familyname = "Tun Win";
+            console.log(familyname.indexOf("T")); // 0 
+            console.log(familyname.indexOf("t")); // -1 
+            console.log(familyname.indexOf("a")); // -1 
+            console.log(familyname.indexOf("n")); // 2
+
+            // => lastIndexOf(value)
+
+            const myname = "Tun Win";
+
+            console.log(myname.lastIndexOf("w")); // -1
+            console.log(myname.lastIndexOf("n")); // -1
+
+            // => padStart(target length,padstring)
+
+            let mynum = "5";
+
+            console.log(mynum.padStart(3,"0")); // 005
+
+            // => padEnd(target length,padstring) 
+
+            let yournum = "5";
+            console.log(yournum.padEnd(3,"0"));
+
+            // => repeat (count)
+
+            const greet = "Hello Sir";
+            console.log(greet.repeat(5));
+
+            // => includes(value) , return boolean
+
+            let favcolor = "My fav color is black color";
+            console.log(favcolor.includes("black")); // true
+            console.log(favcolor.includes("red")); // false
+            console.log(favcolor.includes("Black")); // false
+            console.log(favcolor.includes("BLACK")); // false
+            console.log(favcolor.includes("bla")); // true
+
+            // => replace(old,new)
+
+            console.log(favcolor.replace("black","red")); // My fav color is red color 
+            console.log(favcolor.replace("Black","red"));
+            console.log(favcolor.replace("BLACK","red"));
+            console.log(favcolor.replace("bla","red")); // My fav color is redck color
+            console.log(favcolor.replace('color',"colour")); // My fav colour is black color
+
+            // => replaceAll(old,new) 
+
+            console.log(favcolor.replaceAll("color","colour")); 
+
+            // => startsWith(value) , return boolean 
+
+            const greeting = "Dear U Ba"; 
+
+            console.log(greeting.startsWith("Dear")); // true
+            console.log(greeting.startsWith("dear")); // false 
+            console.log(greeting.startsWith("D")); // true
+            console.log(greeting.startsWith("d")); // false
+
+            console.log(greeting.startsWith("Dear",0)); // true
+            console.log(greeting.startsWith("ar",2)); //  true
+            console.log(greeting.startsWith("U",5)); //  true
+            console.log(greeting.startsWith("Ur",5)); //  false 
+            
+            // => endsWith(value) ,  return boolean 
+                // endsWith(value,length)
+            const adieu = "See you later";
+
+            console.log(adieu.endsWith("later")); // true
+            console.log(adieu.endsWith("Later")); // false
+            console.log(adieu.endsWith("r")); // true
+            console.log(adieu.endsWith("R")); // false 
+
+            console.log(adieu.endsWith("r",adieu.length)); // true
+            console.log(adieu.endsWith("l",adieu.length-4)); // true
+            console.log(adieu.endsWith("a",adieu.length-4)); // false
+
+            // substring(index start,length end)
+
+            const content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry";
+
+            console.log(content.substring(0,5));
+            console.log(content.substring(1,5));
+
+            console.log(content.substring(0,10)+"..."); // Lorem Ipsu...
+            console.log(content.substring(0,10).concat("------")); // Lorem Ipsu...
+
+            console.log(content.substr(0,20)+"..."); // Lorem Ipsum is simpl...
+            console.log(content.substr(0,20).concat("-----")); // Lorem Ipsum is simpl-----
+
+            // => slice(start,end) 
+
+            const info = "Lorem Ipsum is simply dummy text of the printing and typesetting industry";
+            console.log(info.slice(0,5)); // Lorem 
+            console.log(info.slice(1,5)); // orem 
+
+            console.log(info.slice(0,10)+"...");
+            console.log(info.slice(0,10).concat("----"));
+
+            // => split(separator)
+
+            let fruits = "apple,banana,cherry,orange";
+
+            console.log(fruits.split(",")); // ['apple', 'banana', 'cherry', 'orange']
+            console.log(fruits.split("/")); // ['apple,banana,cherry,orange']
+            console.log(typeof fruits.split(",")); // object
+
+            console.log(fruits.split(",",2)); // ['apple', 'banana']
+
+            let text = "Hello Sir";
+            console.log(text.split("/")); // ['Hello Sir']
+            console.log(text.split(" ")); // ['Hello', 'Sir']
+            console.log(text.split("")); // ['H', 'e', 'l', 'l', 'o', ' ', 'S', 'i', 'r'] 
+
+            // => trim()
+
+            let password = "  hello ";
+            console.log(password.trim()); // hello  
+
+            // => trimStart() , trimLeft()
+            console.log(password.trimStart()); // hello
+            console.log(password.trimLeft()); // hello
+
+            // => trimEnd() , trimRight() 
+            console.log(password.trimEnd()); // hello
+            console.log(password.trimRight()); // hello 
+
+            // => toLowerCase()
+
+            let name = "Aung Kyaw kyaw";
+            console.log(name.toLowerCase());
+
+            // => toUpperCase()
+            console.log(name.toUpperCase());
+
+ 
+        </script>
+
+    </body>
+</html> 
+
+
+
+

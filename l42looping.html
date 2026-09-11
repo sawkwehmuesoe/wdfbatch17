@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Looping</title>
+    </head>
+    <body>
+
+        
+
+        <script type="text/javascript">
+        
+           const name = "aung aung";
+           console.log(name); 
+
+           const arrs = ["red","green","blue","white"];
+           console.log(arrs);
+           console.log(arrs[0]);
+           console.log(arrs[1]);
+           console.log(arrs[2]);
+           console.log(arrs[3]);
+        //    console.log(arrs[4]); // undefined 
+
+
+        //    => 1. For Loop 
+
+        //      start         end      ?(++,--)
+        // for(statement1;statement2;statement3){
+        //     code to be exuecuted
+        // }
+
+        for(var i = 0; i < 5;i++){
+            console.log(i);
+        }
+
+        console.log("Hello Sir");
+        console.log("i outside value is  = " ,i); // i outside value is = 5 
+
+
+        let j = 10
+
+        for(j; j < 20; j++){
+            console.log(j); // 10 to 20
+        }
+
+        console.log("j outside value is = ",j);
+
+        // error value = 0 / error
+        // for(const p = 0; p < 3 ; p++){
+        //     console.log(p);
+        // }
+
+        for(var k = 0; k <= 10; k++){
+
+            if(k === 5){
+                console.warn(`${k} is my fav number.`);
+            }
+
+
+            console.log("k value is = ",k);
+        }
+
+        console.log("k outside value is = " , k);
+
+
+        for(var p = 0 ; p < 10 ; p++){
+
+            // console.log(p);
+
+            if(p === 2){
+                console.log(p + " is my fav number");
+                break;
+            }
+
+            console.log(p);
+
+        }
+
+        console.log("p outside value is  = " , p);
+
+
+        for(var q = 0 ; q < 10 ; q++){
+            // console.log(q); // 0  to 9
+
+            if(q == 2){
+                console.log(q + " is my fav number");
+                continue;
+            }
+
+            console.log(q);
+        }
+
+        console.log("q outside value is  = " , q);
+
+
+
+        for(var s = 10 ; s > 0 ; s--){
+
+            console.log(s);
+
+        }
+
+        console.log("s outside value is  = " , s);
+
+
+        // Exercise 
+
+        let myarrs = ["red","green","blue","pink","steelblue"];
+
+        console.log(myarrs[3]);
+        console.log(myarrs[4]);
+
+        for(var w = 0;w < myarrs.length;w++ ){
+            // console.log(w);
+
+            console.log(myarrs[w])
+        }
+
+
+        const peoples = [
+            {name:"Aung Aung",age:25},
+            {name:"Su Su",age:30},
+            {name:"Kyaw Kyaw",age:23}
+        ];
+
+        // console.log(peoples[1].name); 
+
+        for(var q = 0 ; q < peoples.length ; q++){
+            // console.log(q);
+            // console.log("Name = " + peoples[q].name + " Age = " + peoples[q].age);
+            console.log(`Name = ${peoples[q].name} Age = ${peoples[q].age}`);
+        }
+
+        // => For In Loop (obj/array)
+
+        // for (key/index in obj/array){
+        //     code to be executed
+        // }
+
+        let students = {
+            name:"Aung Aung",
+            city:"Mandalay",
+            parent:"U Ba",
+            phone:"0123456789"
+        };
+
+        console.log(students);
+        console.log(students.name);
+
+        for(key in students){
+            // console.log(key);
+            // console.log(students.key); // undefined  . notation 
+            
+            console.log(students[key]);
+        }
+
+
+
+        const ourteams = ["kyaw kyaw","aung aung","zaw zaw","maung maung"];
+        // console.log(ourteams); 
+
+        for(var idx in ourteams){
+            // console.log(idx);
+            console.log(ourteams[idx]);
+        }
+
+        const greeting = "Hello";
+        console.log(greeting[0]); 
+
+        for(var idx in greeting){
+            // console.log(idx);
+            console.log(greeting[idx]);
+        }
+
+
+        // => 3. For of Loop (array)
+
+        // for(value of array){
+        //     code to be executed
+        // }
+
+        const girls = ["su su","lu lu","yu yu","nu nu"];
+
+        for(var girl of girls){
+            console.log(girl);
+        }
+
+        const thanks = "Hifi";
+
+        for(let val of thanks){
+            console.log(val);
+        }
+
+        var b = 0;
+        while(b < 10){
+            console.log("Number b value is = ", b);
+            b++;
+        }
+
+        console.log("b outside value is = ",b);
+
+        let c = 0;
+
+        while(c < 10){
+
+            c++;
+            console.log("Number c value is = ",c);
+
+        }
+
+        console.log("c outside value is = " ,c);
+
+
+        const paints = ["red","green","blue","white","black"];
+
+        let num = 0;
+
+        while(num < paints.length){
+
+            console.log("My paint color is = ", paints[num]);
+            num++;
+
+        }
+
+
+        const laptop = [
+            {
+                cpu:"core i9",
+                ram:"16Gb",
+                hdd:"1Tb"
+            }
+        ]; 
+
+        // console.log(laptop);
+        // console.log(laptop[0].cpu);
+
+        let idxnum = 0;
+
+        while(idxnum < laptop.length){
+
+            console.log(`CPU is = ${laptop[idxnum].cpu} ,RAM is = ${laptop[idxnum].ram} , HDD is = ${laptop[idxnum].hdd} `);
+            idxnum++;
+        }
+
+
+        // => 5 Do While Loop  
+
+        // start 
+
+        // do{
+        //     before print out (inc/dec)
+        //         code to be executed 
+        //     after print out (inc/dec)
+        // }while(end)
+
+        let n = 0;
+
+        do{
+
+            console.log("N value is = " , n);
+            n++;
+
+        }while( n < 10);
+
+
+        console.log("Outside N value is = ", n); // 10
+
+        let g = 0;
+
+        do{
+
+            g++;
+            console.log("G value is = " , g);
+
+        }while(g < 10);
+
+        console.log("Outside G value is = ", g);
+
+        const colors = ["red","green","blue","white","black"];
+
+        // console.log(colors);
+
+        let init = 0;
+
+        do{
+
+            // console.log(init);
+            console.log("My fav color is " + colors[init]);
+            init++;
+
+        }while(init < colors.length);
+
+        // => 6 forEach Loop 
+
+        // callback
+
+        // mainarrays.forEach(function(value,index,array){
+        //     code to be executed
+        // });
+
+        const candaycolors = ["red","green","blue","white","black"];
+
+        candaycolors.forEach(function(candaycolor,idx,arr){
+            // console.log(candaycolor);
+            // console.log(idx);
+            // console.log(arr);
+
+            console.log(`Index number is = ${idx} , value is ${candaycolor}`);
+        });
+
+
+        // => 7. map Loop 
+
+        // mainarrays.map(function(value,index,array){
+        //     code to be executed
+        // });
+
+        const visitors = ["sai sai","aung aung","naung naung","su su","yu yu","nu nu"];
+
+        visitors.forEach(function(visitor){
+            // console.log(visitor);
+            console.log("forEach Result = "+ visitor);
+        })
+
+        visitors.map(function(visitor,idx,arr){
+            // console.log(visitor);
+            // console.log(idx);
+            // console.log(arr);
+            console.log("map Result = "+ visitor);
+        });
+        
+        
+        // let abc = visitors.forEach(function(visitor){
+        //     // console.log(visitor);
+        //     // console.log("forEach Result = "+ visitor);
+
+        //     return visitor;
+        // });
+
+        // console.log(abc); // undefined  can't assign with forEach 
+
+        console.log(visitors);
+
+        const peoplearrs = visitors.map(function(visitor,idx,arr){
+            // console.log(visitor);
+            // console.log(idx);
+            // console.log(arr);
+            
+            return `Dr.${visitor}`; // array
+        });
+
+        console.log(visitors);
+
+        console.log(peoplearrs);
+
+
+
+        // => 8 filter Loop 
+
+        // mainarrays.filter(function(value){
+        //     code to be executed
+        // })
+
+        const ages = [23,34,56,80,13,12,18,17,10,19,60,25,21,30,14];
+        // console.log(ages); // 15 length 
+
+        const getover18 = ages.filter(function(age){
+            // console.log(age);
+
+            return age >= 20;
+        });
+
+        console.log(getover18);
+        
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+</html> 
+
+
+
+
+
+
+

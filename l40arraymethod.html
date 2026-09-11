@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Array Methods</title>
+    </head>
+    <body>
+
+        
+
+        <script type="text/javascript">
+        
+            const arrcolors = ["red","green","blue","white","black","pink"];
+            console.log(arrcolors);
+            console.log(typeof arrcolors);
+            console.log(arrcolors.length);
+            console.log(arrcolors[3]); 
+
+
+            // => Array.isArray(value) , reutrn boolean 
+
+            const name = "Hsu Hsu";
+            console.log(typeof name);
+            console.log(Array.isArray(name)); // false 
+            console.log(Array.isArray(arrcolors)); // true 
+
+            // => flat(depth) , default 1
+            let nestarrs1 = [1,2,[3,4],5];
+            console.log(nestarrs1.flat()); // [1, 2, 3, 4, 5]
+            console.log(nestarrs1.flat(1)); // [1, 2, 3, 4, 5]
+
+            let nestarrs2 = [1,2,[3,[4,5]]];
+            console.log(nestarrs2.flat()); // [1, 2, 3, Array(2)]
+            console.log(nestarrs2.flat(1)); // [1, 2, 3, Array(2)]
+            console.log(nestarrs2.flat(2)); // [1, 2, 3, 4, 5]
+            console.log(nestarrs2.flat(Infinity)); // [1, 2, 3, 4, 5]
+
+            // => indexOf(value)
+            const arrcolours = ["red","green","blue","black","blue","green","red"];
+            console.log(arrcolours.indexOf("black")); // 3
+            console.log(arrcolours.indexOf("Black")); // -1
+            console.log(arrcolours.indexOf("green")); // 1
+
+            // => lastIndexOf(value)
+            
+            console.log(arrcolours.lastIndexOf("black")); // 3
+            console.log(arrcolours.lastIndexOf("Black")); // -1
+            console.log(arrcolours.lastIndexOf("green")); // 5 
+
+            // => join(delimiter)
+
+            const arrpaints = ["red","green","blue","white","black","pink"];
+            console.log(String(arrpaints)); // red,green,blue,white,black,pink
+            console.log(arrpaints.toString()); // red,green,blue,white,black,pink
+            console.log(arrpaints.join("")); // redgreenbluewhiteblackpink
+            console.log(arrpaints.join(" ")); // red green blue white black pink
+            console.log(arrpaints.join("-")); // red-green-blue-white-black-pink 
+
+
+            const candies = ["red","green","blue","white","black"];
+                candies[5] = "pink";
+                candies[1] = "skyblue";
+
+            console.log(candies); 
+            console.log(candies.length); 
+
+            // => push(value) Note :: Add new value to array (addon to the end)
+
+            candies.push("orange");     
+            candies.push("gold");
+            candies.push("violet","gray");
+            console.log(candies); // (10) ['red', 'skyblue', 'blue', 'white', 'black', 'pink', 'orange', 'gold', 'violet', 'gray'] 
+            console.log(candies.length); // 10 
+
+            // => unshift(value) :: Add new value to array (addon to the front)
+
+            candies.unshift("tomato");
+            candies.unshift("green");
+            candies.unshift("silver","steelblue");
+
+            console.log(candies); // ['silver', 'steelblue', 'green', 'tomato', 'red', 'skyblue', 'blue', 'white', 'black', 'pink', 'orange', 'gold', 'violet', 'gray']
+            console.log(candies.length);  // 14
+
+            // => shift() :: Remove value & index (takeoff from  front)
+
+            candies.shift();
+            candies.shift();
+            console.log(candies); // ['green', 'tomato', 'red', 'skyblue', 'blue', 'white', 'black', 'pink', 'orange', 'gold', 'violet', 'gray']
+            console.log(candies.length); // 12
+
+             // => pop() :: Remove value & index (takeoff from end)
+
+            candies.pop();
+            candies.pop();
+            console.log(candies); //  ['green', 'tomato', 'red', 'skyblue', 'blue', 'white', 'black', 'pink', 'orange', 'gold']
+            console.log(candies.length); // 10
+
+            // => delete (Removed only value)
+            delete candies[1];
+            delete candies[5];
+
+            console.log(candies); // ['green', empty, 'red', 'skyblue', 'blue', empty, 'black', 'pink', 'orange', 'gold']
+            console.log(candies.length); // 10 
+            console.log(candies[1]); // underfined 
+            
+            // => slice(index start,index end) start to end (not includesive) , not :: slice (index start,length end);
+
+            const arrnums = [100,200,300,400,500,600,700];
+            console.log(arrnums.slice(0,5)); // (5) [100, 200, 300, 400, 500]
+            console.log(arrnums.slice(1,5)); // (4) [200, 300, 400, 500]
+            console.log(arrnums.slice(1,4)); // [200, 300, 400] 
+
+            // => concat()
+
+            const arrboys = ["aung aung","maung maung","tun tun","kyaw kyaw"]
+            const arrgirls = ["su su","nu nu","yu yu","lue lue","wai wai"];
+            console.log(arrboys+arrgirls);
+            console.log(arrboys.concat(arrgirls)); //  ['aung aung', 'maung maung', 'tun tun', 'kyaw kyaw', 'su su', 'nu nu', 'yu yu', 'lue lue', 'wai wai']
+            console.log(arrgirls.concat(arrgirls)); // ['su su', 'nu nu', 'yu yu', 'lue lue', 'wai wai', 'su su', 'nu nu', 'yu yu', 'lue lue', 'wai wai']
+            console.log(arrgirls.concat(arrboys)); //  ['su su', 'nu nu', 'yu yu', 'lue lue', 'wai wai', 'aung aung', 'maung maung', 'tun tun', 'kyaw kyaw']
+
+            const combinearrs = arrboys.concat(arrgirls);
+
+            console.log(combinearrs.sort()); // ['aung aung', 'kyaw kyaw', 'lue lue', 'maung maung', 'nu nu', 'su su', 'tun tun', 'wai wai', 'yu yu']
+            console.log(combinearrs[0]);
+            console.log(combinearrs[4]);
+
+            // => reverse(); Note :: reverse() can't set z to a , it just a reverse
+            console.log(combinearrs.reverse());
+
+            
+            const arrnumbers = [200,700,300,100,30,50,150,11,10,6,7,8,9,5,600,400,250,360,170,3];
+            console.log(arrnumbers);
+            console.log(arrnumbers.sort());
+            console.log(arrnumbers.reverse());
+
+            // callback function 
+            console.log(arrnumbers.sort(function(a,b){
+                return a-b ; // [3, 5, 6, 7, 8, 9, 10, 11, 30, 50, 100, 150, 170, 200, 250, 300, 360, 400, 600, 700]
+            }));
+
+            console.log(arrnumbers.sort(function(x,y){
+                return y-x ; // [700, 600, 400, 360, 300, 250, 200, 170, 150, 100, 50, 30, 11, 10, 9, 8, 7, 6, 5, 3]
+            }));
+            
+
+
+
+ 
+        </script>
+
+    </body>
+</html> 
+
+
+
+
+<!--
+    to zw 
+
+
+    30AM
+
+-->

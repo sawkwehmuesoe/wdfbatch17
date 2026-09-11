@@ -1,0 +1,137 @@
+/* Descemdant Selector(space) */
+/* ancestor descendant{properties:value} */
+
+/* Tag to Tag  */
+/* div span{
+    color: red;
+} */
+
+/* Multi Tags to Tag */
+
+/* div p span{
+    color: red;
+} */
+
+
+/* => Tags to Class */
+
+/*div .address{
+    color: red;
+} */
+
+/* => Multi Tag to Class */
+/* div span .address{
+    color: red;
+} */
+
+/* =>Multi Tags to Same Class */
+/* div span small.name{
+    color: red;
+} */
+
+/* => Class to Class */
+
+/* .bank .money{
+    color: red;
+} */
+
+/* .bank .currency{
+    color: red;
+} */
+
+/* .money .currency{
+    color: red;
+} */
+
+/* => Multi Class to Class  */
+
+/* .bank .money .currency{
+    color: red;
+} */
+
+
+/* => Class to Tag  */
+/* .container b{
+    color: red;
+} */
+
+/* => Class to Multi Tag  */
+/* .container b span{
+    color: red;
+} */
+
+
+/* => Class to Same Class */
+
+/* .car.jpn{
+    color: red;
+}
+
+.car.cn{
+    color: green;
+}
+
+.car.indo{
+    color: blue;
+}
+
+.car.us{
+    color: violet;
+} */
+
+/* => Class to Same Class */
+
+/* .vehicle .car.jpn{
+    color: red;
+}
+
+.vehicle .car.cn{
+    color: green;
+}
+
+.vehicle .car.indo{
+    color: blue;
+}
+
+.vehicle .car.us{
+    color: violet;
+}  */
+
+/* Class to Tag with Group Selector */
+/* .div1 p,.div1 b{
+    color: red;
+} */
+
+/* => Child Selector ( > ) */
+/* .div2 > p{
+    color: red;
+} */
+
+/* .div3 > i{
+    color: red;
+} */
+
+/* .div2 > b{
+    color: red;
+} */
+
+/* .div2 > .div3{
+    color: red;
+} */
+
+
+/* => (i) General Sibling Selector */
+
+/* .div4 ~ p{
+    color: red;
+} */
+
+
+/* => (ii) Adjacent Sibling Selector  */
+
+.div7 + p{
+    color: red;
+}
+
+
+

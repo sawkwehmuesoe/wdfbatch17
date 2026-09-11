@@ -1,0 +1,108 @@
+:root{
+    --wh: 100px;
+    --ht: 80px;
+    --rc: red;
+    --gn: green;
+    --oc: orange;
+}
+
+.div1{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--rc);
+
+    /* rotate(xy) */
+    transform: rotate(45deg);
+}
+
+.div2{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--gn);
+
+    /* transform: rotate(360deg); */
+    /* transform: rotate(1turn); */
+    transform: rotate(-45deg);
+}
+
+.div3{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--oc);
+
+    /* rotateX (x) */
+    /* transform: rotateX(45deg); */
+
+ 
+}
+
+.div4{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--rc);
+
+    /* rotateY(y) */
+    transform: rotateY(45deg);
+}
+
+.div5{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--gn);
+
+    /* scale (xy) */
+    /* default = 1 */
+    /* transform: scale(1); */
+    /* transform: scale(0); */
+    /* transform: scale(1.5); */
+    transform: scale(0.5);
+}
+
+.div6{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--oc);
+
+    /* skew(xy) */
+    transform: skew(20deg);
+    transform: skew(-20deg);
+}
+
+.div7{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--rc);
+
+    /* translate(x) */
+    /* transform: translate(50px); */
+    /* transform: translate(100px); */
+    /* transform: translate(50%); */
+    /* transform: translate(100%); */
+    /* transform: translate(300%); */
+
+    /* transform: translate(-50px); */
+    /* transform: translate(-100px); */
+
+    /* transform: translateX(-100px); */
+
+    /* transform: translateY(50px); */
+    /* transform: translateY(100px); */
+
+    /* transform: translateY(-50px); */
+    /* transform: translateY(-100px); */
+
+}
+
+.div8{
+    width: var(--wh);
+    height: var(--ht);
+    background-color: var(--gn);
+
+    /* translate: (x,y); */
+    /* transform: translate(50%); */
+    /* transform: translate(50%,50%); */
+    /* transform: translate(-50%,50%); */
+    /* transform: translate(50%,-50%); */
+
+    transform: translateX(-50%) translateY(-50%);
+}

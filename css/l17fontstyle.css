@@ -1,0 +1,123 @@
+/* AT - Rules (@) */
+/* @import url('https://fonts.googleapis.com/css2?family=Stick&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap'); */
+
+@import url('./l17addfile.css');
+
+@font-face{
+    font-family: Stick;
+    src: url("./../fonts/stick/Stick-Regular.ttf");
+}
+
+@font-face{
+    font-family: "Akaya Kanadaka";
+    src: url("./../fonts/akayakanadaka/AkayaKanadaka-Regular.ttf");
+}
+
+/* 
+Font Integration 
+    (i) Local Integrate 
+    (ii) Global Integrate 
+
+
+(i) Local Machine Integrate 
+
+
+
+
+
+*/
+
+/* universal selector (*) */
+
+/* *{
+    font-family: Arial;
+} */
+
+
+/* body{
+    font-family: Arial;
+} */
+
+/* .p1{
+    font-family: Arial;
+} */
+/* 
+.p2{
+    font-family: "Time New Roman";
+} */
+
+/* .p3{
+    font-family: Century, Arial,"Time New Roman";
+} */
+
+/* (ii) Global Integrate  */
+
+/* CDN (content deliver network) */
+
+.p1,.p4{
+    font-family: "Stick",sans-serif;
+     font-weight: 400; /*100,200,300,400 to 900 */
+    font-style: normal;
+}
+
+.p2{
+     font-family: "Akaya Kanadaka", system-ui;
+}
+
+
+/* ttf (true type font) */
+
+.clickme{
+    text-decoration: none;
+    color: green;
+}
+
+/*=> pseudo class (:) */
+.clickme:hover{
+    text-decoration: underline;
+    color: blue;
+    font-size: 30px;
+}
+
+.clickme:visited{
+    color: red;
+}
+
+.clickme:active{
+    color: orange;
+}
+
+
+.menutext{
+    font-family: arial;
+    background-color: green;
+    color: #fff;
+    text-decoration: none;
+
+    /* padding: 10px; */
+            /* top&bottom left& right */
+    /* padding: 10px 50px; */
+
+            /* top  right bottom left  */
+    /* padding: 10px 20px 30px 40px; */ 
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    border-radius: 10px;
+
+    /* transition: all 5s; */
+    /* transition: background-color 5s; */
+    /* transition: color 5s; */
+    transition: background-color 2s,color 5s;
+}
+
+.menutext:hover{
+    background-color: orange;
+    color: #000;
+}
+
+

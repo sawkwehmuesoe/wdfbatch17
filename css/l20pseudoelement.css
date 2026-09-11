@@ -1,0 +1,48 @@
+/* => Pseudoo Element ( :: ) */
+
+/* .paragraph{
+    color: blue;
+    font-size: 20px;
+    user-select: none;
+} */
+
+/* .paragraph::selection{
+    background-color: steelblue;
+    color: #fff;
+} */
+
+/* .paragraph::first-line{
+    color: blue;
+    font-size: 20px;
+} */
+
+/* .paragraph::first-letter{
+    color: blue;
+    font-size: 50px;
+} */
+
+.paragraph::before{
+    content: "ABC";
+    font-size: 50px;
+    color: blue;
+}
+
+.paragraph::after{
+    content: "EFG";
+    font-size: 50px;
+    color: violet;
+}
+
+li::marker{
+    color: blue;
+    font-size: 25px;
+}
+
+.form-control{
+    color: blue;
+}
+
+.form-control::placeholder{
+    color: steelblue;
+    font-weight: bold;
+}

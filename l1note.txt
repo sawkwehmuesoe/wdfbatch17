@@ -1,0 +1,123 @@
+Website 
+
+Static Website 
+Dynamic Website 
+
+Web Developer 
+    Frontend Developer
+    Backend Developer 
+    Database Developer 
+
+tag 
+elements  
+
+
+=> HTML (HyperText Markup Language)
+
+HTML 
+    tags 
+    attributes 
+    value
+
+attribute="value"
+
+<!-- -->  comments
+------------------------------------------
+
+=> CSS ( Cascading Style Sheets V3 )
+
+CSS integrate HTML 
+
+(i)internal style    ( in html file )
+(ii) inline style    ( in html file )
+(iii) external style ( css file )
+
+
+CSS 
+    properties 
+    value 
+
+class="abc"
+
+selector{
+    property:value;
+}
+
+h2{
+    color:blue;
+}
+
+=>Comments 
+    (i) Single Line Comment /* comment */ 
+    (ii) Mulit Line Comment /* 
+
+                                note
+
+                            */
+
+["red","green","blue"] array 
+rgba(r,g,b,a)          function  functionname(parameter)  functionname(parameter,parameter)
+
+background-color    solidcolor 
+background          solid color gradientcolor image 
+background-image                gradientcolor image 
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+name="viewport"  = the visible area of the web page on a device screen 
+
+width=device-width
+    this makes the width of the page match the screen's width (the width of a phone or tablet)
+
+initial-scale = 1.0 
+    initial zoom level when the page first load
+    1.0 mean no zoom - it shows the page at 100% scale
+
+----------------------------------------------------------
+
+=> Javascript 
+
+= Integrate with HTML 
+internal 
+inline
+external 
+
+= Data Type 
+string  "" '' ``
+number  
+boolean true =1 false =0 
+
++ sign 
+number+number = calculate 
+string+number = concat 
+boolean+number = calculate 
+string+boolean = concat 
+
+= Variable Name 
+(we can use letter,number,_,$)
+
+:root{
+    --orcc:orange;
+}
+
+
+=Variable Name 
+const var let
+
+let firstname = "Aung Aung"; // recommand to use
+let Firstname = "Aung Aung"; 
+let first_name = "Aung Aung";
+let $firstname = "Aung Aung";
+let name1 = "Aung Aung"; // recommand to use 
+
+(We can't use)
+
+let first name 
+let first-name 
+let @firstname 
+let 2name 
+
+= Comments 
+    (i) Single Line Comment  //
+    (ii) Multi Line Comment  /*  */
+

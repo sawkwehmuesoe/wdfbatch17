@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Array</title>
+    </head>
+    <body>
+
+        
+
+        <script type="text/javascript">
+        
+            let arrgirls = new Array("su su","lu lu","hla hla");
+            console.log(arrgirls);
+            console.info(arrgirls);
+            console.table(arrgirls);
+
+            let arrboys = ["mg mg","naung naung","kyaw gyi","zaw zaw",200];
+            console.log(arrboys);
+            console.log(arrboys.length);
+            console.log(typeof arrboys); // object
+
+            console.log(arrboys[0]);
+            console.log(arrboys[2]);
+            console.log(typeof arrboys[2]); // string
+            console.log(arrboys[4]);
+            console.log(typeof arrboys[4]);
+            console.log(arrboys[arrboys.length-1]);
+
+            console.log(arrboys[arrboys.length-3]);
+
+            let myarrs = ["hello",1500,true,undefined,null,new Date(),['red','green'],{firstname:"kyaw kyaw",city:'yangon'}];
+
+            console.log(myarrs);
+            console.log(myarrs.length); // 8  
+
+            console.log(myarrs[0]); //  hello
+            console.log(myarrs[5]); // Tue Aug 25 2026 17:33:22 GMT+0700 (Indochina Time)
+            console.log(myarrs[6]); // ['red', 'green']
+            console.log(myarrs[6][0]); // red
+            console.log(myarrs[6][1]); // green 
+            console.log( typeof myarrs[6][0]); // string 
+            console.log(myarrs[7]); // {firstname: 'kyaw kyaw', city: 'yangon'} 
+            console.log(myarrs[7].firstname); // kyaw kyaw
+            console.log(myarrs[7].city); // yangon 
+
+
+            let colors = ["red","green","blue"];
+                colors = ["rgba","cmyk"];
+
+            console.log(colors);
+            console.log(colors.length); // 2 
+
+            let paints = ["red","green",,"blue"];
+
+            console.log(paints);
+            console.log(paints[2]); // undefined
+            console.log(paints[3]); // blue
+            console.log(paints.length);
+    
+            let colours = [];
+
+            colours[3] = "blue";
+            colours[0] = "white";
+            colours[1] = "black";
+            colours[2] = "pink";
+            colours[1] = "gray";
+            colours[5] = "steelblue";
+            
+            console.log(colours);
+            console.log(typeof colours);
+            console.log(colours.length);
+
+
+            let animals = ['cats',"dog"];
+
+            animals[2]="owl";
+            animals[5]="tiger";
+            animals[3]="fish";
+            animals[0]="cow";
+
+            console.log(animals);
+            console.log(animals.length);
+            console.log(animals[5]); // tiger
+            console.log(animals[4]); // undefined
+            console.log(animals[6]); // undefined 
+
+
+            // Nested Array 
+
+            const nestarrs = [
+                ["red","green","blue"],
+                ["cmyk","rgba","hsla"],
+                ["canon","epson",["laser","ink"]]
+            ];
+
+            console.log(nestarrs);
+            console.log(nestarrs.length); // 3 
+            console.log(typeof nestarrs.length);
+            console.log(nestarrs[0]);
+            console.log(nestarrs[1][1]); // rgba
+            console.log(nestarrs[2][2][1]); // ink
+ 
+        </script>
+
+    </body>
+</html> 
+
+
+
+
