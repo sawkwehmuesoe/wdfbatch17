@@ -121,3 +121,25 @@ let 2name
     (i) Single Line Comment  //
     (ii) Multi Line Comment  /*  */
 
+    ===========================================
+
+= DOM (Document Object Model) , programming interface
+
+to access Web Page (HTML Document)
+    (i) search
+    (ii) new create element
+    (iii) edit 
+    (iv) remove
+    (v) action to Events
+
+getElementById("hi")            = ID               (direct element)
+getElementsByClassName()        = Class 
+getElementsByTagName()          = Tag  
+
+querySelector()                 = ID , Class ,Tag (direct element)
+
+querySelectorAll()              = ID , Class ,Tag
+
+
+-----------------------------------------------------------
+
