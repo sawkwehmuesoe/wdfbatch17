@@ -252,7 +252,7 @@ newli.classList.add('delete-we','delete-us');
 
 // => Add Attribute , setAttribute(attname,value)
 
-newli.setAttribute('title','new-item');
+// newli.setAttribute('title','new-item');
 
 // newli.textContent = "Hey";
 // newli.innerText = "Hi";
@@ -274,9 +274,9 @@ newlink.classList.add("delete-item");
 const newitalic = document.createElement("i");
 newitalic.classList.add("fas","fa-trash-alt");
 
-console.log(newitalic);
+// console.log(newitalic);
 
-newlink.appendChild(newitalic);
+// newlink.appendChild(newitalic);
 newlink.appendChild(document.createTextNode("delete"));
 
 console.log(newlink);
@@ -311,13 +311,161 @@ const getlis = document.querySelectorAll("li");
 
 // console.log(getlis);
 
-getlis[0].remove();
+// getlis[0].remove();
 
-console.log(getlis);
+// console.log(getlis);
 
-getlis[1].remove(); // li  
+// getlis[1].remove(); // li  
 
-console.log(getlis.length); // 6
+// console.log(getlis.length); // 6
+
+
+// => Remove Child Element 
+
+const getfirstul = document.querySelector('ul');
+// getfirstul.remove();
+
+// console.log(getfirstul.children[0]);
+
+// getfirstul.removeChild(getfirstul.children[0]); // li1
+// getfirstul.removeChild(getfirstul.children[1]); // li3
+
+// => Attribute 
+
+const firstli = document.querySelector('li');
+// console.log(firstli);
+const firstchild = firstli.children[0];
+console.log(firstchild,"het");
+
+console.log(firstchild.id);
+console.log(firstchild.href);
+console.log(firstchild.alt);
+console.log(firstchild.getAttribute('alt'));
+console.log(firstchild.getAttribute('href'));
+console.log(firstchild.getAttribute('id'));
+
+
+let hasatt = firstchild.hasAttribute('href');
+// console.log(hasatt); // false 
+
+// => className vs classList 
+
+// console.log(firstchild.className);
+// firstchild.className = "delete-myself";
+// firstchild.className = "delete-item delete-myself";
+// firstchild.className = "delete-item delete-myself delete-ourserve";
+// firstchild.className = "delete-item delete-ourserve";
+
+console.log(firstchild.className); // DOMTokenList 
+// console.log(firstchild.className[0]);
+// console.log(firstchild.className[1]);
+
+firstchild.classList.add("delete-myself");
+firstchild.classList.add("delete-ourserve","delete-us","delete-yourself");
+
+firstchild.classList.remove('delete-us');
+firstchild.classList.remove('delete-ourserve','delete-yourself');
+
+
+if(firstchild.className === "delete-item delete-myself"){
+    console.log("Yes");
+}else{
+    console.log("No");
+}
+
+if(firstchild.classList.contains("delete-item")){
+    console.log("Yes");
+}else{
+    console.log("No");
+}
+
+
+// => addEventListner (eventtype,callbackfunction)
+
+const clearbtn = document.querySelector('.clear-tasks'); 
+
+// Method 1 
+// clearbtn.addEventListener('click',function(e){
+//     // console.log("i am working");
+
+//     // console.log(e);
+//     // console.log(e.target);
+
+//     console.log(e.target.id);
+//     console.log(e.target.className);
+//     console.log(e.target.classList);
+//     console.log(e.target.classList[0]);
+
+//     console.log(this);
+//     console.log(this.id);
+//     console.log(this.className);
+//     console.log(this.classList);
+//     console.log(this.classList[0]);
+
+//     e.preventDefault(); // kill link
+
+// });
+
+
+// Method 2 
+
+// clearbtn.addEventListener('click',myclick);
+
+
+function myclick(e){
+
+    e.preventDefault(); 
+
+    // console.log("Hello"); 
+    // console.log(e.target);
+
+    // console.log(this);
+
+    // e.target.innerText = "Finished"; 
+    // this.textContent = "Done"; 
+
+    // Coordinate Event  - relative to the windows
+
+    // console.log(e);
+    // const clientx = e.clientX;
+    // const clienty = e.clientY; 
+    // console.log(clientx,clienty); // calculate from window
+
+
+    const offsetx = e.offsetX;
+    const offsety = e.offsetY;
+    console.log(offsetx,offsety);
+
+}
+
+// => Mouse Event (Pointer Event)
+
+const clbtn = document.querySelector('.clear-tasks');
+
+// Single Click
+// clbtn.addEventListener('click',mouseeventtype); 
+
+// Double Click 
+// clbtn.addEventListener('dblclick',mouseeventtype); 
+
+// Mouse Down 
+// clbtn.addEventListener('mousedown',mouseeventtype); 
+
+// Mouse Up (single click)
+clbtn.addEventListener('mouseup',mouseeventtype); 
+
+function mouseeventtype(e){
+
+    e.preventDefault();
+
+    // console.log("i am working");
+
+    console.log(`Event type = ${e.type}`);
+
+}
+
+
+
 
 
 
