@@ -452,19 +452,95 @@ const clbtn = document.querySelector('.clear-tasks');
 // clbtn.addEventListener('mousedown',mouseeventtype); 
 
 // Mouse Up (single click)
-clbtn.addEventListener('mouseup',mouseeventtype); 
+// clbtn.addEventListener('mouseup',mouseeventtype); 
+
+
+
+const card = document.querySelector('.card');
+
+// Mouse Enter 
+// card.addEventListener('mouseenter',mouseeventtype);
+
+// Mouse Over (element to element)
+// card.addEventListener('mouseover',mouseeventtype);
+
+// Mouse Leave
+// card.addEventListener('mouseleave',mouseeventtype);
+
+// Mouse Move
+// card.addEventListener('mousemove',mouseeventtype);
+
+const heading2 = document.querySelector('h2');
 
 function mouseeventtype(e){
 
     e.preventDefault();
 
     // console.log("i am working");
+    // console.log(`Event type = ${e.type}`);
 
-    console.log(`Event type = ${e.type}`);
+    heading2.textContent = `MouseX: ${e.clientX} ,MouseY: ${e.clientY} ,`;
+
+    document.body.style.backgroundColor = `rgba(${e.offsetX},${e.offsetY},${e.offsetX},0.5)`;
 
 }
 
+// => submit  
 
+const getform = document.querySelector(".form");
+
+// getform.addEventListener('submit',function(e){
+
+//     console.log("hi");
+//     console.log(`Event type = ${e.type}`);
+
+
+//     e.preventDefault();
+// });
+
+// -----------------------------------------
+
+// => Input Event (Keyboard Event)
+
+const getinput = document.querySelector("#task");
+
+// => keydown 
+// getinput.addEventListener('keydown',inputeventtype);
+// => keypress 
+// getinput.addEventListener('keypress',inputeventtype);
+
+// => keyup 
+// getinput.addEventListener('keyup',inputeventtype);
+// => input 
+// getinput.addEventListener('input',inputeventtype);
+
+
+// =>focus 
+// getinput.addEventListener('focus',inputeventtype);
+
+// =>blur 
+// getinput.addEventListener('blur',inputeventtype);
+
+// =>copy (ctl+c) (right click+copy)
+// getinput.addEventListener('copy',inputeventtype);
+
+// =>cut (ctl+x) (right click+cut)
+// getinput.addEventListener('cut',inputeventtype);
+
+// =>paste (ctl+v) (right click+paste)
+getinput.addEventListener('paste',inputeventtype);
+
+function inputeventtype(e){
+
+    console.log(e.target);
+    console.log(this);
+
+    console.log(`Event type = ${e.type}`);
+
+    // console.log(e.target.value);
+    console.log(this.value);
+
+}
 
 
 
