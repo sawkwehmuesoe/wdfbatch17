@@ -528,7 +528,7 @@ const getinput = document.querySelector("#task");
 // getinput.addEventListener('cut',inputeventtype);
 
 // =>paste (ctl+v) (right click+paste)
-getinput.addEventListener('paste',inputeventtype);
+// getinput.addEventListener('paste',inputeventtype);
 
 function inputeventtype(e){
 
@@ -543,6 +543,97 @@ function inputeventtype(e){
 }
 
 
+// => Event Bubbling (child to Parent Element)
+
+// document.querySelector('.card-title').addEventListener('click',function(){
+//     console.log('i am card title');    
+// });
+
+// document.querySelector('.card-header').addEventListener('click',function(){
+//     console.log('i am card header');    
+// });
+
+// document.querySelector('.card').addEventListener('click',function(){
+//     console.log('i am card');    
+// });
+
+// => Event Delegation (parent to child element)
+
+const getdeleteitem = document.querySelector('.delete-item');
+// console.log(getdeleteitem);
+
+getdeleteitem.addEventListener('click',function(e){
+    // console.log("i am delete");
+
+    console.log(e.target); // click to delete  = a tag, click to trash = i tag
+    console.log(this); // click to delete  = a tag, click to trash = a tag
+});
+
+
+// document.body.addEventListener('click',eventdeleg);
+
+function eventdeleg(e){
+    // console.log(e.target);
+    // console.log(e.target.className);
+
+    // if(e.target.className === "fas fa-trash-alt"){
+    //     console.log("I am working, I am trash.");
+    // }
+
+    // if(e.target.className === "list-group-item"){
+    //     console.log("i am list item");
+    // }
+
+    // console.log(e.target.parentElement);
+
+            // i            a       (not working)
+    // if(e.target.parentElement.className === "delete-item"){
+    //     console.log("i am a tag");
+    // }
+
+
+    // if(e.target.parentElement.classList.contains("delete-myself")){
+    //     console.log("i am a tag");
+    // }
+
+
+    if(e.target.parentElement.classList.contains("delete-item")){
+
+        // console.log("yes sir");
+        // i
+        // e.target.remove();   
+            // i   a 
+        // e.target.parentElement.remove();
+
+        e.target.parentElement.parentElement.remove();
+
+    }else if(e.target.classList.contains("delete-item")){
+
+        // a 
+        // e.target.remove();
+
+        // a     li 
+        e.target.parentElement.remove();
+
+    }
+
+}
+
+
+// => Form Data to localStorage
+
+document.querySelector("#form").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    // console.log("i am working");
+
+    const getnewtask = document.getElementById("task").value;
+    // console.log(getnewtask);
+
+    localStorage.setItem("mytasks",getnewtask);
+
+});
 
 
 
