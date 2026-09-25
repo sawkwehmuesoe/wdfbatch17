@@ -631,14 +631,42 @@ document.querySelector("#form").addEventListener("submit",function(e){
     const getnewtask = document.getElementById("task").value;
     // console.log(getnewtask);
 
-    localStorage.setItem("mytasks",getnewtask);
+    let alltasks;
+    // console.log(alltasks);
+
+    if(localStorage.getItem('mytasks') === null){
+        alltasks = [];
+    }else{
+        alltasks = JSON.parse(localStorage.getItem("mytasks"))
+    }
+
+    alltasks.push(getnewtask);
+    console.log(alltasks);
+  
+    localStorage.setItem("mytasks",JSON.stringify(alltasks));
 
 });
 
+console.log(localStorage.getItem('mytasks'));
+console.log(typeof localStorage.getItem('mytasks'));
+
+console.log(JSON.parse(localStorage.getItem('mytasks')));
+console.log(typeof JSON.parse(localStorage.getItem('mytasks')));
+
+const getmytasks = JSON.parse(localStorage.getItem('mytasks'));
+
+getmytasks.forEach((getmytask)=>{
+    console.log(getmytask);
+})
 
 
 
 
 
+// JSON Object 
+
+{
+
+}
 
 
