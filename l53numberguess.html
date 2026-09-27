@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Number Guess</title>
+        <style type="text/css">
+            *{
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: sans-serif;
+                background-color: #f4f4f4;
+
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                overflow: hidden;
+            }
+
+            .form-group .form-control,.form-group .btn{
+                border-style: solid;
+                padding:10px;
+            }
+
+            .container .message1,.container .message1{
+                display: block;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h3>Number Guess</h3>
+            <p>Guess a number between <span class="minnumber">00</span> to <span class="maxnumber">00</span></p>
+
+            <form id="gameform" class="gameform" action="" method="">
+
+                <div class="form-group">
+                    <input type="number" name="guessnumber" id="guessnumber" class="form-control" placeholder="Enter your guess number" autocomplete="off" autofocus />
+                    <input type="submit" id="btn" class="btn" />
+                </div>
+
+            </form>
+
+            <span class="message1">message one</span>
+            <span class="message2">message two</span>
+
+
+        </div>
+       
+
+
+        <script src="./js/l53numberguess.js" type="text/javascript"></script>
+
+    </body>
+</html> 
+
+
+
+

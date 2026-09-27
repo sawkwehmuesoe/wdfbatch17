@@ -645,28 +645,74 @@ document.querySelector("#form").addEventListener("submit",function(e){
   
     localStorage.setItem("mytasks",JSON.stringify(alltasks));
 
+    document.getElementById("task").value = "";
+    document.getElementById("task").focus();
+
+    // clear li 
+    document.querySelector("ul.list-group").innerHTML = "";
+
+    // add new li datas 
+    newlitodom();
+
 });
 
-console.log(localStorage.getItem('mytasks'));
-console.log(typeof localStorage.getItem('mytasks'));
+// console.log(localStorage.getItem('mytasks'));
+// console.log(typeof localStorage.getItem('mytasks'));
 
-console.log(JSON.parse(localStorage.getItem('mytasks')));
-console.log(typeof JSON.parse(localStorage.getItem('mytasks')));
+// console.log(JSON.parse(localStorage.getItem('mytasks')));
+// console.log(typeof JSON.parse(localStorage.getItem('mytasks')));
 
-const getmytasks = JSON.parse(localStorage.getItem('mytasks'));
+// const getmytasks = JSON.parse(localStorage.getItem('mytasks'));
 
-getmytasks.forEach((getmytask)=>{
-    console.log(getmytask);
-})
+// getmytasks.forEach((getmytask,idx)=>{
+//     // console.log(getmytask);
+// });
 
+// => 1 creat new li , existing data 
 
+function newlitodom(){
 
+    const getalltasks = JSON.parse(localStorage.getItem("mytasks"));
+    // console.log(typeof getalltasks);
 
+    // clear li 
+    document.querySelector("ul.list-group").innerHTML = "";
 
-// JSON Object 
+    getalltasks.forEach(function(getalltask,idx){
+        // console.log(getalltask);
 
-{
+        const li = document.createElement('li');
+        li.id = "new-item";
+        li.classList.add("list-group-item");
+        li.appendChild(document.createTextNode(getalltask));
+
+        const link = document.createElement("a");
+        link.href = "javascript:void(0)";
+        link.id = `delete-item${++idx}`;
+        link.classList.add("delete-item");
+
+        const italic = document.createElement('i');
+        italic.classList.add("fas","fa-trash-alt");
+
+        link.appendChild(italic);
+        link.appendChild(document.createTextNode("delete"));
+
+        li.appendChild(link);
+
+        // console.log(li);
+        // console.log(link);
+
+        document.querySelector("ul.list-group").appendChild(li);
+
+        
+    });
 
 }
+
+newlitodom();
+
+// => DOMContentLoaded; 
+document.addEventListener('DOMContentLoaded',newlitodom);
+
 
 
