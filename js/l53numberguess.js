@@ -11,7 +11,7 @@ const minnum = document.querySelector('.minnumber'),
 
       const min = 1,
             max = 10,
-            winningnum = 5;
+            winningnum = randomnum(min,max);
 
         let gameleft = 3;
 
@@ -41,10 +41,10 @@ getbtn.addEventListener('click',function(e){
         // console.log("You Won");
 
         // disabled getinput 
-        getinput.disabled = true; 
+        // getinput.disabled = true; 
 
         // getinput border color to green  
-        getinput.computedStyleMap.borderColor = "green";
+        // getinput.computedStyleMap.borderColor = "green";
 
         // message alert  
         // gameover , color color 
@@ -52,7 +52,12 @@ getbtn.addEventListener('click',function(e){
         // message1.textContent = ` ${winningnum} is correct .Congratulations`;
         // message1.style.color = "green";
 
-        setmessage1(` ${winningnum} is correct .Congratulations`,"green");
+        // setmessage1(` ${winningnum} is correct .Congratulations`,"green");
+
+        // play again 
+        // getbtn.value = "Play Again"
+
+        gameover(true,`${winningnum} is correct .Congratulations`);
 
     }else{
         // Gameover Lose
@@ -66,18 +71,20 @@ getbtn.addEventListener('click',function(e){
             // Gameover Lose
 
             // disabled getinput 
-            getinput.disabled = true; 
+            // getinput.disabled = true; 
 
             // getinput border color to red  
-            getinput.computedStyleMap.borderColor = "red";
+            // getinput.computedStyleMap.borderColor = "red";
 
             // message 1 alert 
                 // gameover , red color 
                 // message1.textContent = `Game Over, You Lost , The correct number is ${winningnum}`;
                 // message1.style.color = "red";
-                setmessage1(`Game Over, You Lost , The correct number is ${winningnum}`,"red");
+                // setmessage1(`Game Over, You Lost , The correct number is ${winningnum}`,"red");
             // play again 
-            getbtn.value = "Play Again"
+            // getbtn.value = "Play Again"
+
+            gameover(false,`Game Over, You Lost , The correct number is ${winningnum}`)
         }else{
             // Continue Game 
 
@@ -117,3 +124,48 @@ function setmessage2(msg,color){
         message2.textContent = "";
     },2000)
 }
+
+
+function gameover(won,msg){
+
+    let color = won === true ? "green" : "red";
+
+    // let color;
+    // won === true ? color="green" : color="red";
+
+
+    // disable getinput 
+    getinput.disabled = true;
+
+    // getinput border color to green 
+    getinput.style.borderColor = color;
+
+    // message1 alert  
+    // gameover  , color 
+    setmessage1(msg,color);
+
+    // play again 
+    getbtn.value = "Play Again";
+
+    // add Class 
+    // getbtn.className = "btn reload";
+    // getbtn.className += " reload";
+
+    getbtn.classList.add("reload");
+
+}
+
+getgameform.addEventListener('mousedown',function(e){
+
+    if(e.target.classList.contains("reload")){
+        window.location.reload();
+    }
+
+});
+
+function randomnum(min,max){
+    let getrdm = Math.round(Math.random()*(max-min)+1);
+    return getrdm;
+}
+
+console.log(winningnum);

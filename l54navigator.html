@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Navigator Properties and Methods</title>
+      
+    </head>
+    <body>
+
+      
+       
+
+
+        <script type="text/javascript">
+
+            console.log(navigator.userAgent); //Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
+            console.log(navigator.platform); // Win32
+            console.log(navigator.onLine); // true 
+
+
+            // => Detect Browser 
+
+            function detectbrowser(){
+
+                const useragent = navigator.userAgent;
+                // console.log(useragent);
+
+                if(useragent.includes("Firefox")){
+                    return "Mozilla Firefox";
+                }else if(useragent.includes("OPR")){
+                    return "Opera";
+                }else if(useragent.includes("Edg")){
+                    return "Microsoft Edge";
+                }else if(useragent.includes("Safari") && !useragent.includes("Chrome")){
+                    return "Safari";
+                }else if(useragent.includes("Chrome") && !useragent.includes("OPR")){
+                    return "Google Chrome";
+                }else{
+                    return "Unkown Browser";
+                }
+
+            }
+
+
+            // => Detect Browser ( Method 2 )
+            // .test() // regular expression pattern
+
+
+            const pattern = /apple/;
+            console.log(pattern.test("I like apple")); // true
+            console.log(pattern.test("I like apples"));  // true
+            console.log(pattern.test("I like Apple")); // false
+            console.log(pattern.test("I like APPLE")); // false
+            console.log(pattern.test("I like orange")); // false
+
+            const string = /^Hello/;
+            console.log(string.test("Hi Hello")); // false 
+            console.log(string.test("Hello Wordl")); // true 
+            console.log(string.test("hello Wordl")); // false
+
+
+            // => Detected Browser ( Method 2 )
+
+            function detectos()
+            {
+
+                const useragent = navigator.userAgent;
+
+                if(useragent.includes("Windows")) return "Windows";
+
+                if(useragent.includes("Mac") && !useragent.includes("iPhone")) return "macOS";
+
+                if(useragent.includes("Linux") && !useragent.includes("Android")) return "Linux";
+
+                if(useragent.includes("Android")) return "Android";
+
+                if((/iPhone|iPad/).test(useragent)) return "iOS";
+
+                return "Unknown OS";
+
+            }
+
+            console.log("Operating System : " , detectos());
+
+
+            // => Detect Device 
+
+            function ismobiledevice(){
+                return /Android|iPhone|iPad|Windows Phone/.test(navigator.userAgent)
+            }
+
+            console.log("Device Type : ",ismobiledevice() ? "Mobile" : "Desktop");
+
+        </script>
+
+    </body>
+</html> 
+
+<!-- 
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0
+-->
+
