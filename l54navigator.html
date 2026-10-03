@@ -9,7 +9,8 @@
     <body>
 
       
-       
+       <button type="button" onclick="clicktoclipboard('Hello Sir')">Hello Sir</button>
+       <button type="button" onclick="clicktoclipboard('Hello Myanmar')">Hello Myanmar</button>
 
 
         <script type="text/javascript">
@@ -91,6 +92,66 @@
             }
 
             console.log("Device Type : ",ismobiledevice() ? "Mobile" : "Desktop");
+
+
+            // => Clipboard (readText(),writeText())
+
+            // => Clipboard (readText(),writeText())
+
+            // console.log(navigator.clipboard);
+
+            function clicktoclipboard(value){
+                navigator.clipboard.writeText(`${value}`)
+                .then(()=>console.log("Copied to clipboard"))
+                .catch(err=>console.log("Failed : ",err))
+            }
+
+            // navigator.clipboard.readText()
+            // .then(text=>console.log("Clipboard result : ",text))
+            // .catch(err=>console.log("Failed : ",err))
+
+            // => Battery  
+
+            navigator.getBattery()
+            .then((battery)=>{
+
+                console.log(`Bettery Level : ${battery.level * 100}%`);
+                console.log(`Charging : ${battery.charging}`);
+                console.log(`Time to full : ${battery.chargingTime} seconds`);
+                console.log(`Time to empty : ${battery.dischargingTime} seconds`);
+
+                battery.addEventListener('levelchange',()=>{
+                    console.log(`Bettery Level : ${battery.level * 100}%`);
+                })
+
+                battery.addEventListener('chargingchange',()=>{
+                    console.log(`Charging Status: ${battery.charging}`);
+                })
+
+            })
+            .catch(err=>console.log("Failed : ", err));
+
+
+
+            // => GEO Location 
+
+            // console.log(navigator.geolocation); // Geo Location {}
+
+            // => check permission status 
+            navigator.permissions.query({name:'geolocation'}) 
+            .then(result=>{
+                // console.log(result);
+                console.log("Geolocation Permission : ", result.state); //granted , prompt , denied
+            });
+
+            navigator.geolocation.getCurrentPosition(position=>{
+
+                // console.log(position);
+
+                console.log("Latitude : ", position.coords.latitude);
+                console.log("Longitude : ", position.coords.longitude);
+
+            },err=>console.log("Failed : ",err))
 
         </script>
 
