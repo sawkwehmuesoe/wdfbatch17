@@ -101,13 +101,13 @@ $(document).ready(function(){
     }
 
     $("#result").on('click',"#restartbtn",function(){
-        // currentidx = 0;
-        // currentscore = 0;
-        // $("#result").hide();
-        // $("#quizcontainer").show();
-        // showquestion();
+        currentidx = 0;
+        currentscore = 0;
+        $("#result").hide();
+        $("#quizcontainer").show();
+        showquestion();
 
-        location.reload();
+        // location.reload();
     })
 
 });
